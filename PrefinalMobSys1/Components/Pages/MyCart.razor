@@ -1,6 +1,152 @@
 ﻿@page "/mycart"
-<h3>MyCart</h3>
+
+<h3 class="mycart-title">My Cart</h3>
+
+<div class="cart-container">
+    <div class="cart-item">
+        <div class="item-info">
+            <img src="images/food1.jpg" alt="Food Item" class="food-image" />
+            <div class="item-details">
+                <h4>Food Item 1</h4>
+                <p class="item-price">$10.00</p>
+            </div>
+        </div>
+        <div class="quantity-controls">
+            <button class="quantity-button">-</button>
+            <span class="quantity">1</span>
+            <button class="quantity-button">+</button>
+        </div>
+    </div>
+
+    <div class="cart-item">
+        <div class="item-info">
+            <img src="images/food2.jpg" alt="Food Item" class="food-image" />
+            <div class="item-details">
+                <h4>Food Item 2</h4>
+                <p class="item-price">$8.00</p>
+            </div>
+        </div>
+        <div class="quantity-controls">
+            <button class="quantity-button">-</button>
+            <span class="quantity">2</span>
+            <button class="quantity-button">+</button>
+        </div>
+    </div>
+
+    <div class="cart-summary">
+        <p>Total: <strong>$26.00</strong></p>
+        <button class="checkout-button">Proceed to Checkout</button>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    .mycart-title {
+        text-align: center;
+        font-size: 2em;
+        color: #f77f00; 
+        margin-top: 20px;
+    }
+
+ 
+    .cart-container {
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .item-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .food-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+    .item-details h4 {
+        font-size: 1.1em;
+        margin: 0;
+    }
+
+    .item-price {
+        font-size: 1em;
+        color: #f77f00;
+    }
+
+
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+    }
+
+    .quantity-button {
+        background-color: #f77f00;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin: 0 5px;
+        border-radius: 5px;
+    }
+
+    .quantity {
+        font-size: 1.2em;
+        margin: 0 10px;
+    }
+
+
+    .cart-summary {
+        text-align: right;
+        margin-top: 20px;
+    }
+
+        .cart-summary p {
+            font-size: 1.2em;
+        }
+
+    .checkout-button {
+        background-color: #f77f00;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+
+        .checkout-button:hover,
+        .quantity-button:hover {
+            background-color: #e76d00; /* Darker orange */
+        }
+
+    .cart-item:hover {
+        background-color: #f9f9f9;
+    }
+</style>
 
 @code {
-
+    // Logic
 }
