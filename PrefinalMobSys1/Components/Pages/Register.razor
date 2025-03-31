@@ -1,38 +1,57 @@
 ﻿@page "/register"
-<h3>Register</h3>
-@if (!string.IsNullOrWhiteSpace(StatusMessage))
-{
-    <div class="alert alert-@Status">
-        <i class="fa fa-info-circle"></i>&nbsp;
-        @StatusMessage
-    </div>
-}
-<table>
-    <tr>
-        <td><label>Username:</label></td>
-        <td><input type="text" @bind="Model.Username" /></td>
-    </tr>
-    <tr>
-        <td><label>Password:</label></td>
-        <td><input type="password" @bind="Model.Password" /></td>
-    </tr>
-    <tr>
-        <td><label>First Name:</label></td>
-        <td><input type="text" @bind="Model.FirstName" /></td>
-    </tr>
-    <tr>
-        <td><label>Last Name:</label></td>
-        <td><input type="text" @bind="Model.LastName" /></td>
-    </tr>
-    <tr>
-        <td><label>Mobile:</label></td>
-        <td><input type="text" @bind="Model.MobileNumber" /></td>
-    </tr>
-    <tr>
-        <td><label>Address:</label></td>
-        <td><textarea @bind="Model.Address"></textarea></td>
-    </tr>
-</table>
-<button @onclick="RegisterUser">
-    Save
-</button>
+
+<div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #FFA500; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); font-family: 'Playfair Display', serif;">
+    <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-weight: 700; color: #FFA500; margin-bottom: 30px;">Register</h3>
+
+    @if (!string.IsNullOrWhiteSpace(StatusMessage))
+    {
+        <div style="background-color: #FFFBE6; color: #FFA500; border: 1px solid #FFA500; border-radius: 8px; margin-bottom: 15px; padding: 10px; text-align: center; font-weight: 500;">
+            <i class="fa fa-info-circle" style="color: #FFA500;"></i>&nbsp; @StatusMessage
+        </div>
+    }
+
+    <form style="display: flex; flex-direction: column;">
+        <div style="margin-bottom: 15px;">
+            <label for="username" style="color: #333; font-weight: 500;">Username</label>
+            <input id="username" type="text" @bind="Model.Username"
+                   style="border: 2px solid #FFA500; border-radius: 8px; padding: 10px; width: 100%; font-family: 'Playfair Display', serif; font-size: 16px; transition: border-color 0.3s;"
+                   onfocus="this.style.borderColor='#FFD700'" onblur="this.style.borderColor='#FFA500'" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="password" style="color: #333; font-weight: 500;">Password</label>
+            <input id="password" type="password" @bind="Model.Password"
+                   style="border: 2px solid #FFA500; border-radius: 8px; padding: 10px; width: 100%; font-family: 'Playfair Display', serif; font-size: 16px; transition: border-color 0.3s;"
+                   onfocus="this.style.borderColor='#FFD700'" onblur="this.style.borderColor='#FFA500'" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="firstname" style="color: #333; font-weight: 500;">First Name</label>
+            <input id="firstname" type="text" @bind="Model.FirstName"
+                   style="border: 2px solid #FFA500; border-radius: 8px; padding: 10px; width: 100%; font-family: 'Playfair Display', serif; font-size: 16px; transition: border-color 0.3s;"
+                   onfocus="this.style.borderColor='#FFD700'" onblur="this.style.borderColor='#FFA500'" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="lastname" style="color: #333; font-weight: 500;">Last Name</label>
+            <input id="lastname" type="text" @bind="Model.LastName"
+                   style="border: 2px solid #FFA500; border-radius: 8px; padding: 10px; width: 100%; font-family: 'Playfair Display', serif; font-size: 16px; transition: border-color 0.3s;"
+                   onfocus="this.style.borderColor='#FFD700'" onblur="this.style.borderColor='#FFA500'" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="mobile" style="color: #333; font-weight: 500;">Mobile</label>
+            <input id="mobile" type="text" @bind="Model.MobileNumber"
+                   style="border: 2px solid #FFA500; border-radius: 8px; padding: 10px; width: 100%; font-family: 'Playfair Display', serif; font-size: 16px; transition: border-color 0.3s;"
+                   onfocus="this.style.borderColor='#FFD700'" onblur="this.style.borderColor='#FFA500'" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="address" style="color: #333; font-weight: 500;">Address</label>
+            <textarea id="address" @bind="Model.Address"
+                      style="border: 2px solid #FFA500; border-radius: 8px; padding: 10px; width: 100%; font-family: 'Playfair Display', serif; font-size: 16px; transition: border-color 0.3s;"
+                      onfocus="this.style.borderColor='#FFD700'" onblur="this.style.borderColor='#FFA500'"></textarea>
+        </div>
+        <button @onclick="RegisterUser"
+                style="background-color: #FFA500; color: #FFF; border: none; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 16px; font-family: 'Playfair Display', serif; cursor: pointer; transition: transform 0.2s, background-color 0.3s; width: 100%;"
+                onmouseover="this.style.backgroundColor='#FFD700'; this.style.transform='scale(1.05)'"
+                onmouseleave="this.style.backgroundColor='#FFA500'; this.style.transform='scale(1)'">
+            Register
+        </button>
+    </form>
+</div>

@@ -1,23 +1,28 @@
 ﻿@page "/login"
-<div class="card">
+<div class="card" style="background: #FFF8DC; padding: 30px; border-radius: 16px; border: 1px solid #FFA500; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); max-width: 400px; margin: auto;">
+    <h2 style="text-align: center; color: #FFA500; font-family: Arial, sans-serif; font-weight: bold;">Welcome Back</h2>
     @if (!string.IsNullOrWhiteSpace(StatusMessage))
     {
-        <div class="alert alert-@Status">
-            <i class="fa fa-info-circle"></i>&nbsp;
+        <div class="alert alert-@Status" style="background-color: #FFFBE6; color: #FFA500; border: 1px solid #FFA500; border-radius: 8px; margin-bottom: 15px; padding: 10px; text-align: center;">
+            <i class="fa fa-info-circle" style="color: #FFA500;"></i>&nbsp;
             @StatusMessage
         </div>
     }
-    <table>
-        <tr>
-            <td><label>Username:</label></td>
-            <td><input type="text" @bind="Model.Username" /></td>
-        </tr>
-        <tr>
-            <td><label>Password:</label></td>
-            <td><input type="password" @bind="Model.Password" /></td>
-        </tr>
-    </table>
-    <button @onclick="LoginUser">
+    <div style="margin-bottom: 15px;">
+        <label for="username" style="color: #333; font-weight: bold;">Username</label>
+        <input id="username" type="text" @bind="Model.Username"
+               style="width: 100%; border: 1px solid #FFA500; background: #FFFBE6; border-radius: 8px; padding: 10px; margin-top: 5px;" />
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label for="password" style="color: #333; font-weight: bold;">Password</label>
+        <input id="password" type="password" @bind="Model.Password"
+               style="width: 100%; border: 1px solid #FFA500; background: #FFFBE6; border-radius: 8px; padding: 10px; margin-top: 5px;" />
+    </div>
+    <button @onclick="LoginUser"
+            style="width: 100%; background-color: #FFA500; color: #FFF; border: none; padding: 12px; cursor: pointer; border-radius: 8px; font-weight: bold; font-size: 16px; transition: background-color 0.3s;">
         <i class="fas fa-sign-in-alt"></i>&nbsp;Log In
     </button>
+    <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #333;">
+        Don't have an account? <a href="/register" style="color: #FFA500; text-decoration: none; font-weight: bold;">Sign Up</a>
+    </p>
 </div>
